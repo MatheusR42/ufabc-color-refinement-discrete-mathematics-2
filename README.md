@@ -5,7 +5,7 @@
 To compile and run the program, use the following command in your terminal:
 
 ```bash
-g++ color_refinement.cpp -o a.out && ./result.out < Base_dados_Problema_Grafos_Isomórficos.txt
+g++ color_refinement.cpp -o result.out && ./result.out < Base_dados_Problema_Grafos_Isomórficos.txt
 ```
 
 This command compiles the `color_refinement.cpp` source file using the `g++` compiler, producing an executable named `result.out`. The program is then executed, taking its input from the file `Base_dados_Problema_Grafos_Isomórficos.txt`. The program processes this file to solve instances of the graph isomorphism problem using the color refinement algorithm.
