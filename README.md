@@ -1,6 +1,33 @@
 # UFABC Color Refinement - Discrete Mathematics 2
 
+
+
+
+The algorithm is based on the following steps:
+
+![The color refinement algorithm.](./f3.jpg)
+
+*Figure: The color refinement algorithm. Image adapted from the article by Martin Grohe and Pascal Schweitzer (see Reference section at the end of this document).*
+
+
+
+To check if v and w have a different number of neighbors of color d, I created a map structure where the key is the node color together with the sorted colors of its neighbors. That way, I created a unique identifier (signature) for node structures.
+
+
+After creating all node signatures, we change the colors of nodes with the same signature: the first color will be 1 and the next ones will be the previous color + 1.
+
+
+To check if the graph is stable, we check if no node color has changed.
+
+
+To check if both graphs are isomorphic, I created a histogram using a map structure, where the key is the node color and the value is the quantity of that color. If both histograms are equal, the graphs are isomorphic.
+
+
+It is important to note that this algorithm is not 100% perfect and there are cases where the result is incorrect. More information about this is in the reference section.
+
+
 ## Tutorial: How to Run
+
 
 To compile and run the program, use the following command in your terminal:
 
@@ -8,7 +35,9 @@ To compile and run the program, use the following command in your terminal:
 g++ color_refinement.cpp -o result.out && ./result.out < Base_dados_Problema_Grafos_Isomórficos.txt
 ```
 
+
 This command compiles the `color_refinement.cpp` source file using the `g++` compiler, producing an executable named `result.out`. The program is then executed, taking its input from the file `Base_dados_Problema_Grafos_Isomórficos.txt`. The program processes this file to solve instances of the graph isomorphism problem using the color refinement algorithm.
+
 
 **Note:** You need to have `g++` installed on your system. If you do not have it, you can install it using your package manager (for example, `sudo apt install g++` on Ubuntu/Debian).
 
@@ -60,6 +89,7 @@ This command compiles the `color_refinement.cpp` source file using the `g++` com
 ## Reference
 
 
+
 This project is inspired by the following article:
 
 **The Graph Isomorphism Problem**  
@@ -74,5 +104,6 @@ Additional references:
 - [Pairs of tough graphs for the graph isomorphism testing](https://funkybee.narod.ru/graphs.htm)
 
 ## About
+
 
 This project is part of the course Discrete Mathematics 2 at UFABC (Universidade Federal do ABC).
